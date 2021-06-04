@@ -14,7 +14,7 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('genre_id')->constrained();
+            $table->foreignId('genre_id')->constrained()->onDelete('cascade');
         });
     }
 
