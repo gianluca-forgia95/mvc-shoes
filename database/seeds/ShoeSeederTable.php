@@ -28,7 +28,7 @@ class ShoeSeederTable extends Seeder
             $newShoe->genre_id = $genre->id;
             $user = User::inRandomOrder()->first();
             $newShoe->user_id = $user->id;
-            $newShoe->name = $faker->word();
+            $newShoe->name = $faker->unique()->word();
             $newShoe->price = $faker->randomFloat(2,50,500);  
             $newShoe->number = $faker->numberBetween(35, 47);
             $newShoe->save();
